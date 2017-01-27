@@ -10,12 +10,30 @@
 // output: array of objects
 
 var createListOfObjects= function(arrayOfStrings){
-  var arrayOfObjects= {};
-  var element=arrayOfStrings[i]
+  var arrayOfObjects= [];
 
-  arrayOfObjects= {"firstName": element[0], "lastName": element[1]}
 
-} return arrayOfObjects;
+
+  for(var i=0; i < arrayOfStrings.length; i ++){
+    var objects= {
+      firstName: "",
+      lastName: ""
+    };
+    var element=arrayOfStrings[i];
+    // console.log(element[0])
+    var splitIt= element.split(" ");
+    
+    objects.firstName= splitIt[0];
+    objects.lastName= splitIt[1];
+
+
+    arrayOfObjects.push(objects)
+
+
+
+  }
+  return arrayOfObjects;
+}
 
 
 

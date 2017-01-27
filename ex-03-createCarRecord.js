@@ -20,13 +20,13 @@
 var createCarRecord=function(string1, string2, number, string3){
   var carObject= {};
 
-  if (typeof string1 !== "string" || typeof string2 !=="string" || typeof string3 !== "string"){
-    carObject= "1st, 2nd, and 4th arguments must be String"
-} if (typeof number !== typeof 1) {
-    carObject= "3rd argument must be a Number"
-} if(arguments.length < 4) {
-  carObject = "new record must have make, model, year, and license values";
-} else {
+  if(arguments.length < 4) {
+    carObject = "new record must have make, model, year, and license values";
+  } else if (typeof number !== typeof 1) {
+      carObject= "3rd argument must be a Number"
+  } else if (typeof string1 !== "string" || typeof string2 !=="string" || typeof string3 !== "string"){
+      carObject= "1st, 2nd, and 4th arguments must be String"
+  } else {
   carObject= {"make": string1, "model": string2, "year": number, "license":string3}
 } return carObject;
 }
