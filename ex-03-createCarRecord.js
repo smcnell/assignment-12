@@ -17,16 +17,26 @@
 // input: string, string, number, string
 // output: object
 
-// var createCarRecord=function(string1, string2, number, string3){
-//   var carObject= {};
-//   var carArray=[];
-//
-//   carArray.push(string1.split(","))
-//   carArray.push(string2.split(","))
-//   carArray.push(number)
-//   carArray.push(string3.split(","))
-//
-// // console.log(carArray)
+var createCarRecord=function(string1, string2, number, string3){
+  var carObject= {};
+
+  if (typeof string1 !== "string" || typeof string2 !=="string" || typeof string3 !== "string"){
+    carObject= "1st, 2nd, and 4th arguments must be String"
+} if (typeof number !== typeof 1) {
+    carObject= "3rd argument must be a Number"
+} if(arguments.length < 4) {
+  carObject = "new record must have make, model, year, and license values";
+} else {
+  carObject= {"make": string1, "model": string2, "year": number, "license":string3}
+} return carObject;
+}
+
+// this.make=string1;
+// this.model=string2;
+// this.year=number;
+// this.license=string3;
+
+// console.log(carArray)
 // for (var i= 0; i < carArray.length; i++){
 //   var arrayElement= carArray[i];
 //   carObject["make"]= arrayElement[0];
@@ -36,8 +46,7 @@
 //
 //
 // }return carObject;
-//
-// }
+
 
 
 
@@ -49,27 +58,27 @@
 
 var newCar1 = createCarRecord('Ford', 'Pinto', 1969, 'IOU7S2')
 var newCar2 = createCarRecord('Pontiac', 'Azteca', 2001, '48NLL1' )
-var newCar2 = createCarRecord('Jeep', 'Wrangler', 1987, '8HPN02' )
+var newCar3 = createCarRecord('Jeep', 'Wrangler', 1987, '8HPN02' )
 // ---------------------------
-var newCar3 = createCarRecord()
-var newCar4 = createCarRecord('Volkswagen', 'Beatle')
+var newCar4 = createCarRecord()
+var newCar5 = createCarRecord('Volkswagen', 'Beatle')
 // ---------------------------
-var newCar5 = createCarRecord('Ferrari', true, 2015, 'K9KPL2' )
-var newCar6 = createCarRecord( true, 'Spider', 2012, 93933)
+var newCar6 = createCarRecord('Ferrari', true, 2015, 'K9KPL2' )
+var newCar7 = createCarRecord( true, 'Spider', 2012, 93933)
 // ---------------------------
-var newCar7 = createCarRecord( 'Ferrari', 'Spider', '2013', '8IOL32')
+var newCar8 = createCarRecord( 'Ferrari', 'Spider', '2013', '8IOL32')
 
 
 console.assert( typeof newCar1 === 'object')
 // ---------------------------
 console.assert( newCar1.make === "Ford" && newCar1.model === "Pinto")
 console.assert( newCar2.make === "Pontiac" && newCar2.year === 2001)
-console.assert( newCar2.model === "Wrangler" && newCar1.license === '8HPN02')
+console.assert( newCar3.model === "Wrangler" && newCar3.license === '8HPN02')
 // ---------------------------
-console.assert( newCar3 === 'new record must have make, model, year, and license values')
 console.assert( newCar4 === 'new record must have make, model, year, and license values')
+console.assert( newCar5 === 'new record must have make, model, year, and license values')
 // ---------------------------
-console.assert( newCar5 === '1st, 2nd, and 4th arguments must be String')
 console.assert( newCar6 === '1st, 2nd, and 4th arguments must be String')
+console.assert( newCar7 === '1st, 2nd, and 4th arguments must be String')
 // ---------------------------
-console.assert( newCar7 === '3rd argument must be a Number')
+console.assert( newCar8 === '3rd argument must be a Number')

@@ -5,11 +5,31 @@
 // that each have the property `firstName` and `lastName` and
 // corresponding value
 
+//
+// input: array of strings
+// output: array of objects
+
+var createListOfObjects= function(arrayOfStrings){
+  var arrayOfObjects= {};
+  var element=arrayOfStrings[i]
+
+  arrayOfObjects= {"firstName": element[0], "lastName": element[1]}
+
+} return arrayOfObjects;
 
 
 
-
-
+//
+//   for (var i=0; i < arrayOfStrings.length; i++){
+//     var arrayElement= arrayOfStrings[i]
+//     arrayOfObjects["firstName"]=arrayElement[0]
+//     arrayOfObjects["lastName"]=arrayElement[1]
+//
+//   } return arrayOfObjects
+// }
+//
+//
+//
 
 
 
@@ -50,5 +70,3 @@ console.assert(ninjaListOfObjects[1].lastName === "Chan")
 console.assert(ninjaListOfObjects[3].firstName === "Billy")
 console.assert(sportStarsListOfObjects[1].firstName === "Ricky")
 console.assert(sportStarsListOfObjects[4].lastName === "Smalls")
-
-
